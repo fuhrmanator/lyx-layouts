@@ -1,0 +1,395 @@
+#% Do not delete the line below; configure depends on this
+#  \DeclareLaTeXClass[exam]{exam}
+#  \DeclareCategory{Teaching_Materials}
+# exam class definition file.
+# Works only with Lyx 2.2 or higher.
+
+Format 60
+
+Columns			1
+Sides			1
+DefaultStyle		Standard
+
+
+ClassOptions
+	FontSize             12
+	PageStyle            empty|head|foot|headandfoot
+End
+
+Input article.layout
+
+Input stdtitle.inc
+Input stdlists.inc
+Input stdinsets.inc
+Input stdfloats.inc
+Input stdcustom.inc
+Input stdcounters.inc
+
+NoStyle Chapter
+NoStyle Chapter*
+NoStyle Part
+NoStyle Part*
+NoStyle Subsubsection
+NoStyle Subsubsection*
+NoStyle Paragraph
+NoStyle Subparagraph
+NoStyle Paragraph*
+NoStyle Subparagraph*
+NoStyle Abstract
+NoStyle Quote
+NoStyle Verse
+NoStyle Bibliography
+#NoStyle Itemize
+NoStyle Address
+NoStyle Right_Address
+
+Counter answersCounter
+End
+
+Style Student_Name_Space
+  CopyStyle         Description
+  Category           FrontMatter
+  RightDelim        \rule{3in}{.3pt}
+  Preamble \newenvironment{Student_Name_Space}{\begin{description}}{\end{description}}
+  EndPreamble
+End
+
+Style Coverpages
+    CopyStyle         Standard
+    Category          FrontMatter
+    LatexType         Environment
+    LatexName         coverpages
+End
+
+#### Question styles
+
+Style SmartQuestion
+  CopyStyle	Enumerate
+  Category	Questions
+  LatexType        Item_Environment
+  LatexName       myquestions
+  ItemCommand	myquestion
+  LabelType	Enumerate
+  LabelSep	xx
+  ResetArgs	1
+
+  Argument 	item:1
+    MenuString	"Point Value"
+    Tooltip	"Specify the value for the points of this question. Use CTRL-L \half for 0.5 points."
+    LabelString	"Points"
+  EndArgument
+End
+
+
+
+Style Full_Width_Instructions
+  Category             Questions
+  LatexType             Command
+  LatexName             fullwidth
+End
+
+Style Part_Width_Instructions
+  Category             Questions
+  LeftMargin            "MMMM"
+  LatexType             Command
+  LatexName             uplevel
+End
+
+########## support for \fillin is with insets
+InsetLayout "Flex:Fill in (blank)"
+  LyxType	Custom
+  LatexType	Command
+  LatexName	fillin
+  KeepEmpty	1   # don't want anything in the inset
+  LabelString	"_________ (fill in blank)" 
+  Argument 1
+    MenuString     "Answer"
+    Tooltip           "Specify the answer (only appears when printing the answers)"
+    LabelString    "Answer"
+    AutoInsert	1
+  EndArgument
+  Argument 2
+    MenuString     "Width"
+    Tooltip           "Specify the value for the width of the blank, e.g. 2in"
+    LabelString    "Width"    
+  EndArgument
+End
+
+
+#### Answer styles
+
+Style Answerline
+  CopyStyle       Standard
+  Align           Right
+  LatexType	Paragraph
+  KeepEmpty       1
+  LatexName	answerline
+  LeftDelim       "\answerline["
+  RightDelim      "]"
+  LabelType       Static
+  LabelString     "__________________"
+  Category        Answers
+End
+
+Style Short_Answer_Space
+	Category              MainText
+	KeepEmpty             1
+	Margin                Dynamic
+	LatexType             Paragraph
+	LatexName             dummy
+	ParIndent             MM
+	Align                 Block
+	LabelType             Static
+	LabelString           "--- Separate Environment ---"
+	LabelFont
+	  Family              Roman
+	  Series              Medium
+	  Size                Normal
+	  Color               Blue
+	EndFont
+	HTMLLabel             NONE
+  KeepEmpty             1
+  Align                 Center
+  LatexType             Command
+  LatexName             vspace*{1in}
+  LabelType             Static
+  LabelString           "--- prints 1 inch of blank space ---"
+  Category              Answers
+End
+
+Style Long_Answer_Space
+	Category              MainText
+	KeepEmpty             1
+	Margin                Dynamic
+	LatexType             Paragraph
+	LatexName             dummy
+	ParIndent             MM
+	Align                 Block
+	LabelType             Static
+	LabelString           "--- Separate Environment ---"
+	LabelFont
+	  Family              Roman
+	  Series              Medium
+	  Size                Normal
+	  Color               Blue
+	EndFont
+	HTMLLabel             NONE
+  KeepEmpty             1
+  Align                 Center
+  LatexType             Command
+  LatexName             newpage
+  LabelType             Static
+  LabelString           "--- leaves rest of page blank ---"
+  Category              Answers
+End
+
+Style Lined_Short_Answer_Space
+	Category              MainText
+	KeepEmpty             1
+	Margin                Dynamic
+	LatexType             Paragraph
+	LatexName             dummy
+	ParIndent             MM
+	Align                 Block
+	LabelType             Static
+	LabelString           "--- Separate Environment ---"
+	LabelFont
+	  Family              Roman
+	  Series              Medium
+	  Size                Normal
+	  Color               Blue
+	EndFont
+	HTMLLabel             NONE
+  KeepEmpty             1
+  Align                 Center
+  LatexType             Command
+  LatexName             fillwithlines{1in}
+  LabelType             Static
+  LabelString           "--- prints 1 inch of lined space ---"
+  Category              Answers
+End
+
+Style Dotted_Lined_Answer_Space
+	Category              MainText
+	KeepEmpty             1
+	Margin                Dynamic
+	LatexType             Paragraph
+	LatexName             dummy
+	ParIndent             MM
+	Align                 Block
+	LabelType             Static
+	LabelString           "--- Separate Environment ---"
+	LabelFont
+	  Family              Roman
+	  Series              Medium
+	  Size                Normal
+	  Color               Blue
+	EndFont
+	HTMLLabel             NONE
+  KeepEmpty             1
+  Align                 Center
+  LatexType             Command
+  LatexName             fillwithdottedlines{1in}
+  LabelType             Static
+  LabelString           "--- prints 1 inch of space with dotted lines ---"
+  Category              Answers
+End
+
+Style Solution
+  CopyStyle          Standard
+  Align              Left
+  Margin             Static
+  LeftMargin         Solution:MMMMMM
+  LatexType          Environment
+  LatexName          solution
+  LabelType          Static
+  LabelString        "Solution:"
+  LabelSep           MM
+  Category           Answers 
+End
+
+Style Solution_or_Lines
+  CopyStyle          Standard
+  Align              Left
+  Margin             Static
+  LeftMargin         Solution:MMMMMM
+  LatexType          Environment
+  LatexName          solutionorlines
+  LabelType          Static
+  LabelString        "Solution (or lines):"
+  LabelSep           MM
+  Category           Answers
+  Argument		1
+    LabelString	"Lined area height"
+    Tooltip	"Height of lined area, e.g., 1in for one inch, or \stretch{1} to use the rest of the space (but a New Page is required after the answer)."
+    AutoInsert	1
+  EndArgument       
+End
+
+Style Solution_or_Dotted_Lines
+  CopyStyle          Standard
+  Align              Left
+  Margin             Static
+  LeftMargin         Solution:MMMMMM
+  LatexType          Environment
+  LatexName          solutionordottedlines
+  LabelType          Static
+  LabelString        "Solution (or dotted lines):"
+  LabelSep           MM
+  Category           Answers
+  Argument		1
+    LabelString	"Lined area height"
+    Tooltip		"Height of lined area, e.g., 1in for one inch, or \stretch{1} to use the rest of the space (but a New Page is required after the answer)."
+    AutoInsert	1
+   EndArgument   
+End
+
+Style Solution_or_Grid
+  CopyStyle          Standard
+  Align              Left
+  Margin             Static
+  LeftMargin         Solution:MMMMMM
+  LatexType          Environment
+  LatexName          solutionorgrid
+  LabelType          Static
+  LabelString        "Solution (or grid):"
+  LabelSep           MM
+  Category           Answers
+  Argument		1
+    LabelString	"Grid area height"
+    Tooltip		"Height of grid area, e.g., 1in for one inch, or \stretch{1} to use the rest of the space (but a New Page is required after the answer)."
+    AutoInsert	1
+  EndArgument     
+End
+
+
+Style Solution_or_Box
+       CopyStyle          Standard
+       Align              Left
+       Margin             Static
+       LeftMargin         Solution:MMMMMM
+       LatexType          Environment
+       LatexName          solutionorbox
+       LabelType          Static
+       LabelString        "Solution (or box):"
+       LabelSep           MM
+       Category           Answers
+       Argument		1
+         LabelString	"Box height"
+         Tooltip		"Height of box, e.g., 1in for one inch, or \stretch{1} to use the rest of the space (but a New Page is required after the answer)."
+         AutoInsert	1
+   EndArgument
+#	   Argument	2
+#		LabelString	"Page break after?"
+#		Tooltip		"Only specified if Box height is set to LaTeX value of \stretch{1}."
+#		Requires 1
+#		LeftDelim	"<br/>"
+#		RightDelim	"<br/>"
+#	   EndArgument
+End
+
+
+#############
+# Experimental
+
+Preamble
+%% Map the lyx-friendly SmartQuestion style to exam environments
+\newcounter{mydepth}%
+\newcommand{\myenvironmentname}{%
+\ifnum\value{mydepth}=0notinquestion\fi%
+\ifnum\value{mydepth}=1question\fi%
+\ifnum\value{mydepth}=2part\fi%
+\ifnum\value{mydepth}=3subpart\fi%
+\ifnum\value{mydepth}=4subsubpart\fi%
+\ifnum\value{mydepth}>4undefinedquestion\fi%
+}%
+\newcommand{\myquestion}{\csname \myenvironmentname\endcsname}%
+\newenvironment{myquestions}%
+  {\stepcounter{mydepth}\begin{\myenvironmentname s}}%
+  {\end{\myenvironmentname s}\addtocounter{mydepth}{-1}}%
+
+% hack to rewrite \mychoice or \mychoice[] to \choice or \CorrectChoice respectively
+\def\mychoice{\@ifnextchar[{\@with}{\@without}}
+\def\@with[#1]{\CorrectChoice}
+\def\@without{\choice}
+
+EndPreamble
+
+Style Multiple_Choice_Answers_(choices)
+  CopyStyle	Enumerate
+  ResetArgs	1 # don't want to inherit Enumerate_Options
+  Category	Answers
+  LatexType        Item_Environment
+  LatexName       choices
+  ItemCommand  mychoice
+  LabelType	Enumerate
+  LabelSep          xx
+  EndLabeltype  Filled_Box
+
+  Argument item:1
+    MenuString     "Mark correct|k"
+    LabelString    "?"
+    Decoration	Classic
+    ToolTip	"The text you type here means nothing. The presense of this argument is enough to indicate the choice is a correct one."
+  EndArgument
+  
+End
+
+Style Multiple_Choice_Answers_(checkboxes)
+  CopyStyle	Multiple_Choice_Answers_(choices)
+  LatexName       checkboxes
+  LabelType	Static
+  LabelString	"[ ]"  
+End
+
+Style Multiple_Choice_Answers_(single_paragraph)
+  CopyStyle	Multiple_Choice_Answers_(choices)
+  LatexName       oneparchoices
+End
+
+Style Multiple_Choice_Answers_(check_boxes_single_paragraph)
+  CopyStyle	Multiple_Choice_Answers_(checkboxes)
+  LatexName       oneparcheckboxes
+End
+
+
