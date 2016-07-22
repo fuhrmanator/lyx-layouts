@@ -25,10 +25,6 @@ Input stdfloats.inc
 Input stdcustom.inc
 Input stdcounters.inc
 
-NoStyle Chapter
-NoStyle Chapter*
-NoStyle Part
-NoStyle Part*
 NoStyle Subsubsection
 NoStyle Subsubsection*
 NoStyle Paragraph
@@ -44,21 +40,6 @@ NoStyle Address
 NoStyle Right_Address
 
 Counter answersCounter
-End
-
-Style Student_Name_Space
-  CopyStyle         Description
-  Category           FrontMatter
-  RightDelim        \rule{3in}{.3pt}
-  Preamble \newenvironment{Student_Name_Space}{\begin{description}}{\end{description}}
-  EndPreamble
-End
-
-Style Coverpages
-    CopyStyle         Standard
-    Category          FrontMatter
-    LatexType         Environment
-    LatexName         coverpages
 End
 
 #### Question styles
@@ -78,21 +59,6 @@ Style SmartQuestion
     Tooltip	"Specify the value for the points of this question. Use CTRL-L \half for 0.5 points."
     LabelString	"Points"
   EndArgument
-End
-
-
-
-Style Full_Width_Instructions
-  Category             Questions
-  LatexType             Command
-  LatexName             fullwidth
-End
-
-Style Part_Width_Instructions
-  Category             Questions
-  LeftMargin            "MMMM"
-  LatexType             Command
-  LatexName             uplevel
 End
 
 ########## support for \fillin is with insets
@@ -367,8 +333,8 @@ Style Multiple_Choice_Answers_(choices)
   EndLabeltype  Filled_Box
 
   Argument item:1
-    MenuString     "Mark correct|k"
-    LabelString    "?"
+    MenuString     "Mark Correct|k"
+    LabelString    "✓"
     Decoration	Classic
     ToolTip	"The text you type here means nothing. The presense of this argument is enough to indicate the choice is a correct one."
   EndArgument
@@ -392,4 +358,31 @@ Style Multiple_Choice_Answers_(check_boxes_single_paragraph)
   LatexName       oneparcheckboxes
 End
 
+# Grading table
+
+Style Grading_Table
+  LatexType Command
+  LatexName gradetable
+  LabelType             Static
+  LabelFont
+    Family              Roman
+    Series              Medium
+    Size                Normal
+    Color               Blue
+  EndFont
+  LabelString           "--- Grading Table ---"
+  LabelType	Above
+  KeepEmpty 1
+  Argument 1
+    Mandatory 0
+	LabelString "Orientation"
+	Tooltip "Specify v for vertical or h for horizontal."
+	AutoInsert 1
+  EndArgument
+  Argument 2
+    Mandatory 0
+	LabelString "Type"
+	Tooltip "Specify questions to show question numbers or pages to show page numbers."
+  EndArgument
+End
 

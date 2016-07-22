@@ -1,0 +1,1500 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass exam
+\begin_preamble
+\usepackage{amssymb} %for redefining checkboxes
+
+% header and footer styles (see 2.6 of Exam.cls documentation)
+\pagestyle{headandfoot}
+\runningheadrule
+\firstpageheader{Math 115}{First Exam}{July 4, 1776}
+\runningheader{Math 115}{First Exam, Page \thepage\ of \numpages}{July 4, 1776}
+\firstpagefooter{}{}{}
+\runningfootrule
+\runningfooter{}{Spring Semester}{}
+\end_preamble
+\options addpoints,12pt,answers
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Simple instructions for basic exam with LyX
+\end_layout
+
+\begin_layout Standard
+Producing a basic exam with the exam layout is easy.
+ 
+\end_layout
+
+\begin_layout Subsection
+Asking for the student's name
+\end_layout
+
+\begin_layout Standard
+This is just basic LyX formatting.
+ We follow the sample given by the exam.cls documentation:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Doublebox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "5.5in"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+Answer the questions in the spaces provided on the question sheets.
+ If you run out of room for an answer, continue on the back of the page.
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace 0.1in
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+Name and section:
+\begin_inset space \enskip{}
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hrulefill
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace 0.2in
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+Instructor's name:
+\begin_inset space \enskip{}
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hrulefill
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Asking questions
+\end_layout
+
+\begin_layout Standard
+The layout has a SmartQuestion style that has an optional Points argument.
+ Again, we follow the same example given in the exam.cls documentation:
+\end_layout
+
+\begin_layout SmartQuestion
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+
+Why is there air?
+\end_layout
+
+\begin_layout SmartQuestion
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+15
+\end_layout
+
+\end_inset
+
+How much wood would a woodchuck chuck if a woodchuck could chuck wood?
+\end_layout
+
+\begin_layout SmartQuestion
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+
+Compute 
+\begin_inset Formula ${\displaystyle \int_{0}^{1}x^{2},}dx$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Questions with parts, and subparts, and subsubparts.
+ 
+\end_layout
+
+\begin_layout Standard
+In this layout, there is no need to specify whether a SmartQuestion is a
+ part, supart, etc.
+ One simply uses the TAB (resp.
+ Shift-TAB) key to increase (resp.
+ decrease) depth of the SmartQuestion.
+ Here is the same example from the exam.cls documentation:
+\end_layout
+
+\begin_layout SmartQuestion
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+
+Why is there air?
+\end_layout
+
+\begin_layout SmartQuestion
+What if there were no air?
+\end_layout
+
+\begin_deeper
+\begin_layout SmartQuestion
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+
+Describe the effect on the balloon industry.
+\end_layout
+
+\begin_layout SmartQuestion
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+
+Describe the effect on the aircraft industry.
+\end_layout
+
+\end_deeper
+\begin_layout SmartQuestion
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+20
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout SmartQuestion
+Define the universe.
+ Give three examples.
+\end_layout
+
+\begin_layout SmartQuestion
+If the universe were to end, how would you know?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+The above example illustrates several things:
+\end_layout
+
+\begin_layout Itemize
+Parts of a question should be deeper (increased depth) than the question.
+\end_layout
+
+\begin_layout Itemize
+If a question is blank, its following part will begin on the same line as
+ the question.
+\end_layout
+
+\begin_layout Itemize
+You can assign points either to the question or to the parts of a question.
+\end_layout
+
+\begin_layout Subsection
+Leaving space for the answers
+\end_layout
+
+\begin_layout Standard
+To leave blank space after a question you use Insert > Formatting > Vertical
+ Space, and you end a page with Insert > Formatting > New Page.
+ For example, if you wanted to leave 3 inches of space after the first question
+ and equal amounts of remaining space after each of the parts of the second
+ question, your would create the following:
+\end_layout
+
+\begin_layout SmartQuestion
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+
+Why is there air?
+\begin_inset VSpace 3in
+\end_inset
+
+
+\end_layout
+
+\begin_layout SmartQuestion
+What if there were no air?
+\end_layout
+
+\begin_deeper
+\begin_layout SmartQuestion
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+
+Describe the effect on the balloon industry.
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout SmartQuestion
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+
+Describe the effect on the aircraft industry.
+\begin_inset VSpace vfill
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Headers and footers
+\end_layout
+
+\begin_layout Standard
+To define the header and footers, this is done via LaTeX commands in the
+ Preamble.
+ This example document has a sample definition in the Document > Settings
+ > LaTeX Preamble containing the following:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size footnotesize
+
+\backslash
+pagestyle{headandfoot}
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size footnotesize
+
+\backslash
+runningheadrule
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size footnotesize
+
+\backslash
+firstpageheader{Math 115}{First Exam}{July 4, 1776}
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size footnotesize
+
+\backslash
+runningheader{Math 115}{First Exam, Page 
+\backslash
+thepage
+\backslash
+ of 
+\backslash
+numpages}{July 4, 1776}
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size footnotesize
+
+\backslash
+firstpagefooter{}{}{}
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size footnotesize
+
+\backslash
+runningfooter{}{}{}
+\end_layout
+
+\begin_layout Section
+Document class options
+\end_layout
+
+\begin_layout Standard
+As written in the exam.cls documentation, you can specify 12 point type by
+ setting the Document > Settings > Document Class > Class Options to include
+ 12pt.
+\end_layout
+
+\begin_layout Subsection
+The option 
+\family typewriter
+addpoints
+\end_layout
+
+\begin_layout Standard
+The option 
+\family typewriter
+addpoints
+\family default
+ (which can be combined, e.g., 
+\family typewriter
+12pt,
+\series bold
+addpoints
+\family default
+\series default
+) enables the commands that add up the points.
+ See the exam.cls documentation.
+\end_layout
+
+\begin_layout Standard
+Note: use the LaTeX code 
+\family typewriter
+
+\backslash
+half
+\family default
+ for the value of 0.5.
+ 
+\end_layout
+
+\begin_layout SmartQuestion
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+half
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+This question is not worth as much.
+\end_layout
+
+\begin_layout Subsection
+The option 
+\family typewriter
+answers
+\end_layout
+
+\begin_layout Standard
+If you will be typing solutions into the exam, they can be printed by specifying
+ the 
+\family typewriter
+answers
+\family default
+ option, e.g., 
+\family typewriter
+12pt,addpoints,
+\series bold
+answers
+\family default
+\series default
+.
+ This applies to solutions that are specified after the question, or within
+ multiple choice answers that are marked as correct.
+\end_layout
+
+\begin_layout Section
+Points, questions
+\end_layout
+
+\begin_layout Standard
+Many commands exist in the exam.cls for managing points and formatting questions.
+ It is recommended that you use TeX codes in LyX or modify the document
+ preamble to specify these commands as necessary.
+ 
+\end_layout
+
+\begin_layout Standard
+For example, to have a question's points displayed at the right, use the
+ 
+\family typewriter
+
+\backslash
+pointsinrightmargin
+\family default
+ TeX command before the question(s) you want it to apply to.
+ You can specify many options (see the exam.cls documentation for all the
+ details).
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pointsinrightmargin
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+boxedpoints
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usehorizontalhalf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout SmartQuestion
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+1
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+half
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Why is there air? 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+nopointsinrightmargin
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+bracketedpoints
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+useslantedhalf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout SmartQuestion
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+2
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+half
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+What if there were no air?
+\end_layout
+
+\begin_layout Standard
+At this time Titled Questions (
+\family typewriter
+
+\backslash
+titledquestion
+\family default
+) are not supported by this layout.
+ 
+\end_layout
+
+\begin_layout Standard
+The question numbering customizations have not been tested.
+\end_layout
+
+\begin_layout Standard
+The customizing list parameters has not been tested.
+\end_layout
+
+\begin_layout Section
+Multiple choice and fill in the blank questions
+\end_layout
+
+\begin_layout Standard
+To specify multiple choice answers after a question, type the TAB key (to
+ increase depth) and specify one of the LyX styles starting with Multiple
+ Choice Answers.
+ For example,
+\end_layout
+
+\begin_layout SmartQuestion
+One of these things is not like the others; one of these things is not the
+ same.
+ Which one is different?
+\end_layout
+
+\begin_deeper
+\begin_layout Multiple Choice Answers (choices)
+John
+\end_layout
+
+\begin_layout Multiple Choice Answers (choices)
+Paul
+\end_layout
+
+\begin_layout Multiple Choice Answers (choices)
+George
+\end_layout
+
+\begin_layout Multiple Choice Answers (choices)
+Ringo
+\end_layout
+
+\begin_layout Multiple Choice Answers (choices)
+\begin_inset Argument item:1
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+Socrates
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+To specify answers that are correct, right-click at the start of the answer
+ and (also via the menu Insert) choose the option Mark Correct.
+ See answer (e) above for an answer with this option.
+ Note that even though an inset allows you to type information into the
+ correct option, this information has no meaning.
+ 
+\end_layout
+
+\begin_layout Standard
+There are various options for formatting the answers, including 
+\emph on
+choices
+\emph default
+ (as above) or 
+\emph on
+check boxes
+\emph default
+ as well as single paragraph versions useful for shorter answers (as below).
+\end_layout
+
+\begin_layout SmartQuestion
+One of these things is not like the others; one of these things is not the
+ same.
+ Which one is different?
+\end_layout
+
+\begin_deeper
+\begin_layout Multiple Choice Answers (checkboxes)
+John
+\end_layout
+
+\begin_layout Multiple Choice Answers (checkboxes)
+Paul
+\end_layout
+
+\begin_layout Multiple Choice Answers (checkboxes)
+George
+\end_layout
+
+\begin_layout Multiple Choice Answers (checkboxes)
+Ringo
+\end_layout
+
+\begin_layout Multiple Choice Answers (checkboxes)
+\begin_inset Argument item:1
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+Socrates
+\end_layout
+
+\end_deeper
+\begin_layout SmartQuestion
+One of these things is not like the others; one of these things is not the
+ same.
+ Which one is different?
+\end_layout
+
+\begin_deeper
+\begin_layout Multiple Choice Answers (single paragraph)
+John
+\end_layout
+
+\begin_layout Multiple Choice Answers (single paragraph)
+Paul
+\end_layout
+
+\begin_layout Multiple Choice Answers (single paragraph)
+George
+\end_layout
+
+\begin_layout Multiple Choice Answers (single paragraph)
+Ringo
+\end_layout
+
+\begin_layout Multiple Choice Answers (single paragraph)
+\begin_inset Argument item:1
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+Socrates
+\end_layout
+
+\end_deeper
+\begin_layout SmartQuestion
+One of these things is not like the others; one of these things is not the
+ same.
+ Which one is different?
+\end_layout
+
+\begin_deeper
+\begin_layout Multiple Choice Answers (check boxes single paragraph)
+John
+\end_layout
+
+\begin_layout Multiple Choice Answers (check boxes single paragraph)
+Paul
+\end_layout
+
+\begin_layout Multiple Choice Answers (check boxes single paragraph)
+George
+\end_layout
+
+\begin_layout Multiple Choice Answers (check boxes single paragraph)
+Ringo
+\end_layout
+
+\begin_layout Multiple Choice Answers (check boxes single paragraph)
+\begin_inset Argument item:1
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+Socrates
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Customization of multiple choice answer formatting is done using TeX code
+ insets, for example (see exam.cls for the details of the commands):
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\backslash
+usepackage{amssymb} %in preamble normally
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+checkboxchar{$
+\backslash
+Box$}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+checkedchar{$
+\backslash
+blacksquare$}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout SmartQuestion
+One of these things is not like the others; one of these things is not the
+ same.
+ Which one is different?
+\end_layout
+
+\begin_deeper
+\begin_layout Multiple Choice Answers (check boxes single paragraph)
+John
+\end_layout
+
+\begin_layout Multiple Choice Answers (check boxes single paragraph)
+Paul
+\end_layout
+
+\begin_layout Multiple Choice Answers (check boxes single paragraph)
+George
+\end_layout
+
+\begin_layout Multiple Choice Answers (check boxes single paragraph)
+Ringo
+\end_layout
+
+\begin_layout Multiple Choice Answers (check boxes single paragraph)
+\begin_inset Argument item:1
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+Socrates
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Fill in the blank questions
+\end_layout
+
+\begin_layout Standard
+In a question, a blank (with the answer) can be specified using Insert >
+ Custom Insets > Fill in (blank).
+ See the example below:
+\end_layout
+
+\begin_layout SmartQuestion
+\begin_inset Flex Fill in (blank)
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Black
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+is the color of my true love's hair.
+\end_layout
+
+\begin_layout Standard
+It is possible to specify an optional Width argument by right-clicking the
+ Inset and choosing Width:
+\end_layout
+
+\begin_layout SmartQuestion
+The magic word is 
+\begin_inset Flex Fill in (blank)
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+prestidigitator
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+2in
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It's easy to do true/false questions using fill in (blank) insets.
+ Just make the width more narrow:
+\end_layout
+
+\begin_layout SmartQuestion
+\begin_inset Flex Fill in (blank)
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+0.25in
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ My favorite color is purple.
+\end_layout
+
+\begin_layout Section
+Escaping the indentation: 
+\family typewriter
+
+\backslash
+uplevel
+\family default
+ and 
+\family typewriter
+
+\backslash
+fullwidth
+\end_layout
+
+\begin_layout Standard
+These features have not been tested with this layout, but they may be exploited
+ inside TeX insets.
+ 
+\end_layout
+
+\begin_layout SmartQuestion
+Is there, is there balm in Gilead?
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fullwidth{
+\end_layout
+
+\end_inset
+
+
+\series bold
+\size large
+Essay questions
+\series default
+\size default
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout SmartQuestion
+Explain how the cooling of matter in the centuries following the big bang
+ has influenced the British parliamentary system of government.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fullwidth{
+\end_layout
+
+\end_inset
+
+
+\series bold
+\size large
+Laboratory questions
+\series default
+\size default
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout SmartQuestion
+In the cabinet below your laboratory bench you will find a single edged
+ razor blade, several C-clamps, and a bottle of whiskey.
+ Remove your appendix.
+ Do not suture until your work has been inspected.
+\end_layout
+
+\begin_layout Section
+Leaving space for the answers
+\end_layout
+
+\begin_layout Standard
+There are LyX styles for all the options specified in the exam.cls documentation,
+ for example:
+\end_layout
+
+\begin_layout SmartQuestion
+In no more than one paragraph, explain why the earth is round.
+\end_layout
+
+\begin_deeper
+\begin_layout Solution or Box
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+1in
+\end_layout
+
+\end_inset
+
+The earth is round because...
+\end_layout
+
+\end_deeper
+\begin_layout SmartQuestion
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout SmartQuestion
+What changes to the van Allen radiation belt are needed to make the earth
+ into a regular icosahedron?
+\end_layout
+
+\begin_deeper
+\begin_layout Solution or Lines
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+2in
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout SmartQuestion
+Where should the field generator be constructed if you want one of the vertices
+ to be located at the Royal Observatory at Greenwich?
+\end_layout
+
+\begin_deeper
+\begin_layout Solution or Grid
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+2in
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout SmartQuestion
+What is the unladen velocity of a swallow?
+\end_layout
+
+\begin_deeper
+\begin_layout Solution or Dotted Lines
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+stretch{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+If you want to specify 
+\backslash
+stretch to take remaining space on the page, it has to be inside a TeX inset
+ inside the height.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Subsection
+Short answer questions
+\end_layout
+
+\begin_layout Standard
+There's a LyX style for 
+\family typewriter
+
+\backslash
+answerline
+\family default
+.
+ Make sure it's indented to the next level so that you can continue with
+ questions.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength
+\backslash
+answerlinelength{2in}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begingradingrange{myrange}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout SmartQuestion
+Who's buried in Grant's tomb?
+\end_layout
+
+\begin_deeper
+\begin_layout Answerline
+Grant, silly!
+\end_layout
+
+\end_deeper
+\begin_layout SmartQuestion
+What was the color of George Washington's white horse?
+\end_layout
+
+\begin_deeper
+\begin_layout Answerline
+Nelson or Blueskin
+\end_layout
+
+\end_deeper
+\begin_layout SmartQuestion
+What is the unladen velocity of a swallow?
+\end_layout
+
+\begin_deeper
+\begin_layout Answerline
+I don't know
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+endgradingrange{myrange}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Solutions
+\end_layout
+
+\begin_layout Standard
+See the examples in the Answers section above.
+ 
+\end_layout
+
+\begin_layout Section
+Grading tables and point tables.
+\end_layout
+
+\begin_layout Standard
+There are two LyX styles, one for inserting a Grading Table and one for
+ a Point Table.
+ Each has two options fields.
+ 
+\end_layout
+
+\begin_layout Grading Table
+This table doesn't look so great because the grading renumbering has restarted
+ several times in this document, which confuses the function.
+\end_layout
+
+\begin_layout Standard
+Otherwise, a TeX code works quite well:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+partialgradetable{myrange}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
