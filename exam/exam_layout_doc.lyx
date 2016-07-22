@@ -24,9 +24,9 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman "default" "default"
-\font_sans "default" "default"
-\font_typewriter "default" "default"
+\font_roman "lmodern" "default"
+\font_sans "lmss" "default"
+\font_typewriter "lmtt" "default"
 \font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
@@ -41,7 +41,16 @@
 \index_command default
 \paperfontsize default
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
 \papersize default
 \use_geometry false
 \use_package amsmath 1
@@ -84,13 +93,37 @@
 
 \begin_body
 
-\begin_layout Section
-Simple instructions for basic exam with LyX
+\begin_layout Title
+Exam layout
+\end_layout
+
+\begin_layout Author
+Version 0.1
+\end_layout
+
+\begin_layout Author
+by Christopher Fuhrman
 \end_layout
 
 \begin_layout Standard
-Producing a basic exam with the exam layout is easy.
- 
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Simple instructions for basic exam with \SpecialChar LyX
+
+\end_layout
+
+\begin_layout Standard
+Producing a basic exam with the exam layout is easy, thanks to the exam
+ document class developed by Philip Hirschhorn.
+ This documentation follows loosely the structure of the exam document class
+ on which the layout is based.
 \end_layout
 
 \begin_layout Subsection
@@ -98,8 +131,13 @@ Asking for the student's name
 \end_layout
 
 \begin_layout Standard
-This is just basic LyX formatting.
- We follow the sample given by the exam.cls documentation:
+This is just basic \SpecialChar LyX
+ formatting.
+ We follow the sample given by the 
+\series bold
+exam.cls
+\series default
+ documentation:
 \end_layout
 
 \begin_layout Standard
@@ -388,8 +426,18 @@ Leaving space for the answers
 \end_layout
 
 \begin_layout Standard
-To leave blank space after a question you use Insert > Formatting > Vertical
- Space, and you end a page with Insert > Formatting > New Page.
+To leave blank space after a question you use 
+\family sans
+Insert Formatting\SpecialChar menuseparator
+Vertical Space
+\family default
+, and you end a page with 
+\family sans
+Insert\SpecialChar menuseparator
+Formatting\SpecialChar menuseparator
+New Page
+\family default
+.
  For example, if you wanted to leave 3 inches of space after the first question
  and equal amounts of remaining space after each of the parts of the second
  question, your would create the following:
@@ -461,43 +509,52 @@ Headers and footers
 \end_layout
 
 \begin_layout Standard
-To define the header and footers, this is done via LaTeX commands in the
- Preamble.
- This example document has a sample definition in the Document > Settings
- > LaTeX Preamble containing the following:
+To define the header and footers, this is done via 
+\family sans
+\SpecialChar LaTeX
+
+\family default
+ commands in the 
+\family sans
+Document\SpecialChar menuseparator
+Settings\SpecialChar menuseparator
+LaTeX Preamble
+\family default
+, e.g.:
 \end_layout
 
 \begin_layout Standard
 
 \family typewriter
 \size footnotesize
+\begin_inset listings
+lstparams "language=TeX,basicstyle={\scriptsize\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
 
 \backslash
 pagestyle{headandfoot}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
-\family typewriter
-\size footnotesize
 
 \backslash
 runningheadrule
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
-\family typewriter
-\size footnotesize
 
 \backslash
 firstpageheader{Math 115}{First Exam}{July 4, 1776}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
-\family typewriter
-\size footnotesize
 
 \backslash
 runningheader{Math 115}{First Exam, Page 
@@ -509,22 +566,23 @@ thepage
 numpages}{July 4, 1776}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
-\family typewriter
-\size footnotesize
 
 \backslash
 firstpagefooter{}{}{}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
-\family typewriter
-\size footnotesize
 
 \backslash
 runningfooter{}{}{}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -533,8 +591,14 @@ Document class options
 
 \begin_layout Standard
 As written in the exam.cls documentation, you can specify 12 point type by
- setting the Document > Settings > Document Class > Class Options to include
- 12pt.
+ setting the 
+\family sans
+Document\SpecialChar menuseparator
+Settings\SpecialChar menuseparator
+Document Class\SpecialChar menuseparator
+Class Options
+\family default
+ to include 12pt.
 \end_layout
 
 \begin_layout Subsection
@@ -544,11 +608,7 @@ addpoints
 \end_layout
 
 \begin_layout Standard
-The option 
-\family typewriter
-addpoints
-\family default
- (which can be combined, e.g., 
+The option addpoints (which can be combined, e.g., 
 \family typewriter
 12pt,
 \series bold
@@ -560,7 +620,12 @@ addpoints
 \end_layout
 
 \begin_layout Standard
-Note: use the LaTeX code 
+Note: use the 
+\family sans
+\SpecialChar LaTeX
+
+\family default
+ code 
 \family typewriter
 
 \backslash
@@ -625,8 +690,14 @@ Points, questions
 
 \begin_layout Standard
 Many commands exist in the exam.cls for managing points and formatting questions.
- It is recommended that you use TeX codes in LyX or modify the document
- preamble to specify these commands as necessary.
+ It is recommended that you use 
+\family sans
+\SpecialChar TeX
+
+\family default
+ codes in \SpecialChar LyX
+ or modify the document preamble to specify these commands as
+ necessary.
  
 \end_layout
 
@@ -638,9 +709,26 @@ For example, to have a question's points displayed at the right, use the
 \backslash
 pointsinrightmargin
 \family default
- TeX command before the question(s) you want it to apply to.
- You can specify many options (see the exam.cls documentation for all the
- details).
+ 
+\family sans
+\SpecialChar TeX
+
+\family default
+ command before the question(s) you want it to apply to.
+ You can specify many options, e.g., 
+\family typewriter
+
+\backslash
+boxedpoints
+\family default
+, 
+\family typewriter
+
+\backslash
+usehorizontalhalf
+\family default
+, etc.
+ See the exam.cls documentation for all the details.
 \end_layout
 
 \begin_layout Standard
@@ -763,16 +851,20 @@ At this time Titled Questions (
 \backslash
 titledquestion
 \family default
-) are not supported by this layout.
+) are not supported intuitively by this layout.
+ You can use them via \SpecialChar TeX
+ codes, however.
  
 \end_layout
 
 \begin_layout Standard
-The question numbering customizations have not been tested.
-\end_layout
-
-\begin_layout Standard
-The customizing list parameters has not been tested.
+The question numbering customizations of 
+\series bold
+exam.cls 
+\series default
+have not been tested with this layout in \SpecialChar LyX
+.
+ Nor have the customizing list parameters.
 \end_layout
 
 \begin_layout Section
@@ -781,8 +873,9 @@ Multiple choice and fill in the blank questions
 
 \begin_layout Standard
 To specify multiple choice answers after a question, type the TAB key (to
- increase depth) and specify one of the LyX styles starting with Multiple
- Choice Answers.
+ increase depth) and specify one of the \SpecialChar LyX
+ styles starting with Multiple Choice
+ Answers.
  For example,
 \end_layout
 
@@ -956,8 +1049,12 @@ Socrates
 
 \end_deeper
 \begin_layout Standard
-Customization of multiple choice answer formatting is done using TeX code
- insets, for example (see exam.cls for the details of the commands):
+Customization of multiple choice answer formatting is done using 
+\family sans
+\SpecialChar TeX
+
+\family default
+ code insets, for example (see exam.cls for the details of the commands):
 \end_layout
 
 \begin_layout Standard
@@ -1036,8 +1133,13 @@ Fill in the blank questions
 \end_layout
 
 \begin_layout Standard
-In a question, a blank (with the answer) can be specified using Insert >
- Custom Insets > Fill in (blank).
+In a question, a blank (with the answer) can be specified using 
+\family sans
+Insert\SpecialChar menuseparator
+Custom Insets\SpecialChar menuseparator
+Fill in (blank)
+\family default
+.
  See the example below:
 \end_layout
 
@@ -1154,7 +1256,12 @@ fullwidth
 
 \begin_layout Standard
 These features have not been tested with this layout, but they may be exploited
- inside TeX insets.
+ inside 
+\family sans
+\SpecialChar TeX
+
+\family default
+ insets.
  
 \end_layout
 
@@ -1239,7 +1346,8 @@ Leaving space for the answers
 \end_layout
 
 \begin_layout Standard
-There are LyX styles for all the options specified in the exam.cls documentation,
+There are \SpecialChar LyX
+ styles for all the options specified in the exam.cls documentation,
  for example:
 \end_layout
 
@@ -1344,8 +1452,12 @@ status open
 \begin_layout Plain Layout
 If you want to specify 
 \backslash
-stretch to take remaining space on the page, it has to be inside a TeX inset
- inside the height.
+stretch to take remaining space on the page, it has to be inside a 
+\family sans
+\SpecialChar TeX
+
+\family default
+ inset inside the height.
 \end_layout
 
 \end_inset
@@ -1360,7 +1472,8 @@ Short answer questions
 \end_layout
 
 \begin_layout Standard
-There's a LyX style for 
+There's a \SpecialChar LyX
+ style for 
 \family typewriter
 
 \backslash
@@ -1465,35 +1578,198 @@ Grading tables and point tables.
 \end_layout
 
 \begin_layout Standard
-There are two LyX styles, one for inserting a Grading Table and one for
- a Point Table.
- Each has two options fields.
- 
-\end_layout
-
-\begin_layout Grading Table
-This table doesn't look so great because the grading renumbering has restarted
- several times in this document, which confuses the function.
+There are two \SpecialChar LyX
+ styles, one for inserting a 
+\family sans
+Grading Table
+\family default
+ and one for a 
+\family sans
+Point Table
+\family default
+.
+ Each has two options fields, 
+\family sans
+Orientation
+\family default
+ to specify if the table should be horizontal (h) or vertical (v) and 
+\family sans
+Type
+\family default
+ to specify whether each table should refer to 
+\family sans
+questions
+\family default
+ or 
+\family sans
+pages
+\family default
+.
 \end_layout
 
 \begin_layout Standard
-Otherwise, a TeX code works quite well:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "lightgray"
 status open
 
 \begin_layout Plain Layout
-
-
-\backslash
-partialgradetable{myrange}
+Note: These tables don't appear correctly in this documentation because
+ the question renumbering has restarted several times in the various examples
+ presented (which is not the way it's supposed to happen in a real exam).
+ This is a limitation of the exam class, not of the layout in \SpecialChar LyX
+.
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Grading Table
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+h
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+questions
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Any text in the 
+\family sans
+Grading Table
+\family default
+ style is meaningless and should be blank
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Point Table
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+h
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+pages
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Any text in the 
+\family sans
+Point Table
+\family default
+ style is meaningless and should be blank
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\family typewriter
+
+\backslash
+partialgradetable
+\family default
+ command can theoretically work, provided one places the \SpecialChar TeX
+ codes properly.
+ See the 
+\series bold
+exam.cls
+\series default
+ documentation for the details of using those options.
+\end_layout
+
+\begin_layout Section
+Contributing improvements to exam layout
+\end_layout
+
+\begin_layout Standard
+Since the exam layout for \SpecialChar LyX
+ is on GitHub, you should feel free to create
+ Issues if you find something is broken or you'd like support for something
+ that the layout doesn't yet do.
+\end_layout
+
+\begin_layout Standard
+The best way, of course, is to contribute the improvements directly to the
+ repository.
+ The git workflow seems complex at first, but if you're able to understand
+ Layout files in \SpecialChar LyX
+, it should not be a problem.
+ You start by making a fork the project, then you can make modifications
+ to the layout file (and this documentation!) and submit them as pull requests.
+ There's a great explanation of how contributing to a GitHub project works
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "here"
+target "https://www.longren.io/contributing-to-github-projects-is-easy/"
+
+\end_inset
+
+.
+ I prefer to use 
+\begin_inset CommandInset href
+LatexCommand href
+name "GitHub desktop"
+target "https://desktop.github.com/"
+
+\end_inset
+
+ (the contibution steps are virtually the same and are explained on the
+ download page) because I don't have to (remember how to) type those git
+ command lines.
+ 
 \end_layout
 
 \end_body

@@ -1,8 +1,9 @@
 #% Do not delete the line below; configure depends on this
-#  \DeclareLaTeXClass[exam]{exam}
+#  \DeclareLaTeXClass[exam]{Exam (Philip Hirschhorn)}
 #  \DeclareCategory{Teaching_Materials}
 # exam class definition file.
 # Works only with Lyx 2.2 or higher.
+# Author : Christopher Fuhrman (fuhrmanator@gmail.com)
 
 Format 60
 
@@ -300,6 +301,7 @@ End
 
 Preamble
 %% Map the lyx-friendly SmartQuestion style to exam environments
+%% See http://tex.stackexchange.com/a/319996/17868
 \newcounter{mydepth}%
 \newcommand{\myenvironmentname}{%
 \ifnum\value{mydepth}=0notinquestion\fi%
@@ -314,7 +316,8 @@ Preamble
   {\stepcounter{mydepth}\begin{\myenvironmentname s}}%
   {\end{\myenvironmentname s}\addtocounter{mydepth}{-1}}%
 
-% hack to rewrite \mychoice or \mychoice[] to \choice or \CorrectChoice respectively
+% code to rewrite \mychoice or \mychoice[] to \choice or \CorrectChoice respectively
+% see http://tex.stackexchange.com/a/319470/17868
 \def\mychoice{\@ifnextchar[{\@with}{\@without}}
 \def\@with[#1]{\CorrectChoice}
 \def\@without{\choice}
@@ -358,11 +361,12 @@ Style Multiple_Choice_Answers_(check_boxes_single_paragraph)
   LatexName       oneparcheckboxes
 End
 
-# Grading table
+# Grading and Point tables
 
 Style Grading_Table
   LatexType Command
   LatexName gradetable
+  Category	Tables
   LabelType             Static
   LabelFont
     Family              Roman
@@ -386,3 +390,8 @@ Style Grading_Table
   EndArgument
 End
 
+Style Point_Table
+  CopyStyle Grading_Table
+  LatexName pointtable
+  LabelString           "--- Points Table (horizontal) ---"
+End
