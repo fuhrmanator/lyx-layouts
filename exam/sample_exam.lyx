@@ -8,44 +8,6 @@
 \options 12pt,addpoints
 \use_default_options true
 \maintain_unincluded_children false
-\begin_local_layout
-Style "Grading Table (horizontal, questions)"
-  CopyStyle Standard
-  LatexType Paragraph
-  Category	Tables
-  Margin    Dynamic
-  LeftDelim ""
-  RightDelim "\gradetable[h][questions]"
-  LabelType             Static
-  LabelFont
-    Family              Roman
-    Series              Medium
-    Size                Normal
-    Color               Blue
-  EndFont
-  LabelString           "--- Grading Table (horizontal, questions) ---"
-  LabelType	Static
-  KeepEmpty 1
-End
-
-Style "Grading Table (horizontal, pages)"
-  CopyStyle "Grading Table (horizontal, questions)"
-  LabelString           "--- Grading Table (horizontal, pages) ---"
-  RightDelim "\gradetable[h][pages]"
-End
-
-Style "Grading Table (vertical, questions)"
-  CopyStyle "Grading Table (horizontal, questions)"
-  LabelString           "--- Grading Table (vertical, questions) ---"
-  RightDelim "\gradetable[v][questions]"
-End
-
-Style "Grading Table (vertical, pages)"
-  CopyStyle "Grading Table (horizontal, questions)"
-  LabelString           "--- Grading Table (vertical, pages) ---"
-  RightDelim "\gradetable[v][pages]"
-End
-\end_local_layout
 \language english
 \language_package default
 \inputencoding auto
@@ -110,6 +72,106 @@ End
 
 \begin_body
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Many options exist in Exam for doing headers and footers.
+ Please read the documentation for all the details.
+\end_layout
+
+\begin_layout Plain Layout
+Please note that if you use Title or Author, a title page will be produced
+ (
+\backslash
+maketitle) in LaTeX.
+ The 
+\begin_inset Quotes eld
+\end_inset
+
+first page
+\begin_inset Quotes erd
+\end_inset
+
+ in Exam's headers/footers don't seem to work properly in such cases (maybe
+ because they need to be in the Preamble?).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Partial Header (Left)
+CS101
+\end_layout
+
+\begin_layout Partial Header (Center)
+Centered text
+\end_layout
+
+\begin_layout Partial Header (Right)
+Right header
+\end_layout
+
+\begin_layout Partial Footer (Left)
+Left footer
+\end_layout
+
+\begin_layout Partial Footer (Center)
+Centered footer text
+\end_layout
+
+\begin_layout Partial Footer (Right)
+Right footer
+\end_layout
+
+\begin_layout Footer
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Yo
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+text
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 3
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Title
 Sample exam in \SpecialChar LyX
 
@@ -117,6 +179,24 @@ Sample exam in \SpecialChar LyX
 
 \begin_layout Author
 Course: Common Sense 101
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{headandfoot} % hack to work around 
+\backslash
+maketitle clobbering the first page's headers/footers
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -165,6 +245,7 @@ Name and section:
 \end_layout
 
 \begin_layout Standard
+\noindent
 \begin_inset Box Frameless
 position "t"
 hor_pos "c"
@@ -221,7 +302,7 @@ thickness "0.4pt"
 separation "3pt"
 shadowsize "4pt"
 framecolor "black"
-backgroundcolor "pink"
+backgroundcolor "lightgray"
 status open
 
 \begin_layout Plain Layout
@@ -229,13 +310,32 @@ status open
 This section is reserved for the instructor or grader:
 \end_layout
 
-\begin_layout Grading Table (horizontal, questions)
+\begin_layout Plain Layout
 \align center
+\begin_inset Flex Grade Table (Exam)
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+h
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
-There should be no extra text in the grading table
+There should be no extra text in the grading table inset
 \end_layout
 
 \end_inset
@@ -276,7 +376,7 @@ Signature:
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 The commands below redefine the format of the top-level question, and specify

@@ -395,3 +395,138 @@ Style Point_Table
   LatexName pointtable
   LabelString           "--- Points Table (horizontal) ---"
 End
+
+Style "Partial Header (Left)"
+  Category "Exam Layout"
+  Margin Dynamic
+  LabelType Static
+  LabelSep "  "
+  LabelFont
+    Color blue
+    Misc emph
+  EndFont
+  LabelString "Partial Header (Left):"
+  LatexType Command
+  LatexName lhead
+  Argument 1
+    Mandatory 0
+    LabelString "Text for first page"
+  EndArgument
+End
+
+Style "Partial Header (Center)"
+  CopyStyle "Partial Header (Left)"
+  LabelString "Partial Header (Center):" 
+  LatexName chead  
+End
+  
+Style "Partial Header (Right)"
+  CopyStyle "Partial Header (Left)"
+  LabelString "Partial Header (Right):" 
+  LatexName rhead  
+End
+
+Style "Partial Footer (Left)"
+  CopyStyle "Partial Header (Left)"
+  LabelString "Partial Footer (Left):" 
+  LatexName lfoot
+End
+  
+Style "Partial Footer (Center)"
+  CopyStyle "Partial Header (Left)"
+  LabelString "Partial Footer (Center):" 
+  LatexName cfoot  
+End
+  
+Style "Partial Footer (Right)"
+  CopyStyle "Partial Header (Left)"
+  LabelString "Partial Footer (Right):" 
+  LatexName rfoot  
+End
+  
+Style Header
+  Category "Exam Layout"
+  Margin Dynamic
+  LabelType Static
+  LabelSep "  "
+  LabelFont
+    Color blue
+    Misc emph
+  EndFont
+  LabelString "Header:"
+  LatexType Command
+  LatexName header
+  Argument 1
+    Mandatory 1
+    LabelString "Right"
+  EndArgument
+  Argument 2
+    Mandatory 1
+    LabelString "Center"
+  EndArgument
+  Argument 3
+    Mandatory 1
+    LabelString "Left"
+  EndArgument
+End
+
+Style "Header (First Page)"
+  CopyStyle Header
+  LabelString "Header (First Page):"
+  LatexName firstpageheader    
+End
+
+Style "Header (Running)"
+  CopyStyle Header
+  LabelString "Header (Running):"
+  LatexName runningheader 
+End
+
+Style "Footer"
+  CopyStyle Header
+  LabelString "Footer:"
+  LatexName footer 
+End
+
+Style "Footer (First Page)"
+  CopyStyle Header
+  LabelString "Footer (First Page):"
+  LatexName firstpagefooter    
+End
+
+Style "Footer (Running)"
+  CopyStyle Header
+  LabelString "Footer (Running):"
+  LatexName runningfooter 
+End
+
+InsetLayout "Flex:Grade Table (Exam)"
+    LyXType          Custom
+    LabelString      "Grade Table"
+    LabelType       Static
+    LatexType        Command
+    LatexName        gradetable
+    Decoration       Classic
+    LabelFont
+        Color        blue
+        Size         Small
+    EndFont
+    Argument 1
+        AutoInsert 1
+        Mandatory 0
+        LabelString "Alignment"
+        Tooltip "Enter h for Horizontal or v for Vertical."
+    EndArgument
+    Argument 2
+        AutoInsert 1
+        Mandatory 0
+        LabelString "Content"
+        Tooltip "Enter questions for question numbers or pages for page numbers."
+    EndArgument
+End
+
+InsetLayout "Flex:Point Table (Exam)"
+    CopyStyle "Flex:Grade Table (Exam)"
+    LabelString      "Grade Table"
+    LatexName        pointtable
+End
