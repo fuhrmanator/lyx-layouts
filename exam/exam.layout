@@ -503,7 +503,6 @@ End
 InsetLayout "Flex:Grade Table (Exam)"
     LyXType          Custom
     LabelString      "Grade Table"
-    LabelType       Static
     LatexType        Command
     LatexName        gradetable
     Decoration       Classic
