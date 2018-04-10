@@ -4,7 +4,7 @@
 # exam class definition file.
 # Works only with Lyx 2.2 or higher.
 # Author : Christopher Fuhrman (fuhrmanator@gmail.com)
-# Version: 1.0
+# Version: 1.01
 
 Format 60
 
@@ -312,7 +312,8 @@ Preamble
 \ifnum\value{mydepth}=4subsubpart\fi%
 \ifnum\value{mydepth}>4undefinedquestion\fi%
 }%
-\newcommand{\myquestion}{\csname \myenvironmentname\endcsname}%
+\newcommand{\myquestion}{\filbreak
+\csname \myenvironmentname\endcsname}%
 \newenvironment{myquestions}%
   {\stepcounter{mydepth}\begin{\myenvironmentname s}}%
   {\end{\myenvironmentname s}\addtocounter{mydepth}{-1}}%
